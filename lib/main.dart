@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +13,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    void openurl() {
+      try {
+        String url = "https://github.com/Akash701";
+        launch(url);
+      } catch (e) {
+        print(e);
+      }
+    }
+
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Scaffold(
@@ -20,6 +30,10 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              CircleAvatar(
+                child: Image.asset("images/akash.jpg"),
+                radius: 50,
+              ),
               Text(
                 "Akash J Nair",
                 style: TextStyle(
@@ -65,7 +79,14 @@ class _MyAppState extends State<MyApp> {
               SizedBox(
                 height: 20,
               ),
-              Image.asset('github/GitHub-Mark-Light-64px.png'),
+              FlatButton(
+                child: Image.asset('github/GitHub-Mark-Light-64px.png'),
+                onPressed: () {
+                  setState(() {
+                    openurl();
+                  });
+                },
+              ),
             ],
           ),
         )),
