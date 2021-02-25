@@ -31,23 +31,28 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                child: Image.asset("images/akash.jpg"),
+                backgroundImage: AssetImage("images/akash.jpg"),
+                // child: Image.asset("images/akash.jpg"),
                 radius: 50,
+              ),
+              SizedBox(
+                height: 20,
               ),
               Text(
                 "Akash J Nair",
                 style: TextStyle(
                   fontFamily: 'Marck Script',
-                  fontSize: 32,
+                  fontSize: 40,
                 ),
               ),
               SizedBox(
                 height: 5,
               ),
               Text(
-                "SOFTWARE DEVELOPER",
+                "FLUTTER DEVELOPER",
                 style: TextStyle(
                   letterSpacing: 5,
+                  fontSize: 18,
                 ),
               ),
               Divider(
@@ -62,7 +67,12 @@ class _MyAppState extends State<MyApp> {
               Card(
                 child: ListTile(
                   leading: Icon(Icons.phone),
-                  title: Text('+911234567891'),
+                  title: Text(
+                    '+911234567891',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
                 ),
                 margin: EdgeInsets.only(right: 20, left: 20),
               ),
@@ -72,7 +82,12 @@ class _MyAppState extends State<MyApp> {
               Card(
                 child: ListTile(
                   leading: Icon(Icons.mail),
-                  title: Text('akashjnair701@gmail.com'),
+                  title: Text(
+                    'akashjnair701@gmail.com',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
                 ),
                 margin: EdgeInsets.only(right: 20, left: 20),
               ),
